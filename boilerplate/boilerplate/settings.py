@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'helloworld',
-    'ii_dataxfer'
+    'i_boilerplate_staticpage',
+    'ii_boilerplate_dataxfertohtml'
+
 ]
 
 MIDDLEWARE = [

@@ -19,5 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('helloworld.urls')),
-    path('dataxfer/', include('ii_dataxfer.urls'))
+    path('staticpage/', include('i_boilerplate_staticpage.urls')),
+    path('dataxfertohtml/', include('ii_boilerplate_dataxfertohtml.urls'))
 ]
