@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'helloworld',
     'i_boilerplate_staticpage',
-    'ii_boilerplate_dataxfertohtml'
+    'ii_boilerplate_dataxfertohtml',
+    'iii_boilerplate_getjson_weather'
 
 ]
 
