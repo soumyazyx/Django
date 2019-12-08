@@ -53,6 +53,7 @@ path('', include('howdy.urls')),
 
 ---
 MODELS
+**Models = tables**
 
 1. Create project
 django-admin startproject helloworld
@@ -114,18 +115,6 @@ admin.site.register(Employee)
         ```
 
 ---
-Models
-
-Models in django are a CLASS which represents a table in a database
-
-**Models = tables**
-
-one model = one table 
-
-example:
-
-```python
-
 
 ---
 **outer mysite/ root directory** : Just a container for project - can be renames
