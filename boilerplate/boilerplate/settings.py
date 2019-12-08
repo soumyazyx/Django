@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'helloworld',
     'i_boilerplate_staticpage',
     'ii_boilerplate_dataxfertohtml',
-    'iii_boilerplate_getjson_weather'
+    'iii_boilerplate_getjson_weather',
+    'iv_model'
 
 ]
 

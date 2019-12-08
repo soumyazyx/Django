@@ -51,7 +51,80 @@ howdy > create urls.py > path('', views.howdyhome)
 link howdy urls.py to main helloworld urls.py
 path('', include('howdy.urls')),
 
+---
+MODELS
 
+1. Create project
+django-admin startproject helloworld
+cd helloworld
+
+[one time activity]
+Migrate and create superuser 
+python manage.py migrate
+python manage.py createsuperuser - optional
+
+2. Create app
+python manage.py startapp howdy
+
+3. Register the app in project settings
+helloworld > settings.py > INSTALLED_APPS > add 'howdy' 
+
+5. Create new html page
+howdy > templates > howdy > home.html
+
+6. Link the page to view
+howdy > views.py > def howdy_home 
+return render(request, 'howdy/home.html')
+
+7. link the view to url in howdy urls.py 
+howdy_home > create urls.py > path('', views.howdy_home)
+
+8. link howdy urls.py to main helloworld urls.py
+path('', include('howdy_home.urls')),
+
+9. Create model. one MODEL class = one TABLE in db
+howdy > models.py > 
+```python
+from django.db import models
+class Employee(models.Model):
+    name = models.CharField(max_length=1000)
+    addr = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+```
+10. Run migration to create the table
+python manage.py makemigrations - picks up the class
+python manage.py migrate - creates the table
+
+11. Link the model with admin.py so that it appears in the admin page
+```python
+from .models import Employee
+
+admin.site.register(Employee)
+```
+
+12. Add an employee
+    1. Goto admin console and add  or
+    2. programatically
+        ```python
+        e1 = Employee(name='Soumya', addr='wherever')
+        e1.save()
+        ```
+
+---
+Models
+
+Models in django are a CLASS which represents a table in a database
+
+**Models = tables**
+
+one model = one table 
+
+example:
+
+```python
 
 
 ---
