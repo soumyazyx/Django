@@ -4,7 +4,6 @@ from . import forms
 
 
 def modelformhome(request):
-    print("TIU")
     if (request.method == 'POST'):
         form = forms.CreateBlog(request.POST)
         if(form.is_valid):
@@ -19,5 +18,4 @@ def modelformhome(request):
             'title': record.title,
             'content': record.content
         })
-    print(blog_recs)
     return render(request, 'v_modelforms/home.html', {'form': form, 'recs':blog_recs})
