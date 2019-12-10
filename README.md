@@ -56,8 +56,8 @@ MODELS
 **Models = tables**
 
 1. Create project
-django-admin startproject helloworld
-cd helloworld
+`django-admin startproject helloworld`
+`cd helloworld`
 
 [one time activity]
 Migrate and create superuser 
@@ -65,23 +65,23 @@ python manage.py migrate
 python manage.py createsuperuser - optional
 
 2. Create app
-python manage.py startapp howdy
+`python manage.py startapp howdy`
 
 3. Register the app in project settings
-helloworld > settings.py > INSTALLED_APPS > add 'howdy' 
+`helloworld > settings.py > INSTALLED_APPS > add 'howdy' `
 
 5. Create new html page
-howdy > templates > howdy > home.html
+`howdy > templates > howdy > home.html`
 
 6. Link the page to view
-howdy > views.py > def howdy_home 
+`howdy > views.py > def howdy_home `
 return render(request, 'howdy/home.html')
 
 7. link the view to url in howdy urls.py 
-howdy_home > create urls.py > path('', views.howdy_home)
+`howdy_home > create urls.py > path('', views.howdy_home)`
 
 8. link howdy urls.py to main helloworld urls.py
-path('', include('howdy_home.urls')),
+`path('', include('howdy_home.urls')),`
 
 9. Create model. one MODEL class = one TABLE in db
 howdy > models.py > 
