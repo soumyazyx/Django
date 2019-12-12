@@ -115,6 +115,59 @@ admin.site.register(Employee)
         ```
 
 ---
+MODELFORMS
+
+1. Create project
+2. Create app
+3. Register the app in project settings
+5. Create new html page
+6. Link the page to view
+7. link the view to url in howdy urls.py 
+8. link howdy urls.py to main helloworld urls.py
+9. Create model
+10. Run migrations
+11. Link the model with admin.py so that it appears in the admin page
+12. Add an employee by taking the data from a form
+
+Create a new file forms.py
+```python
+from django import forms
+from . import models
+
+class CreateEmployee(forms.ModelForm):
+    class Meta:
+        model = models.Employee
+        fields = [ 'name', 'addr' ]
+```
+
+Go back to views.py
+
+```python
+from django.shortcuts import render, redirect
+from .models import Employee
+from . import forms
+
+
+def modelformhome(request):
+    if (request.method == 'POST'):
+        form = forms.CreateEmployee(request.POST)
+        if(form.is_valid):
+            form.save(commit=True)
+            return redirect('modelformhome')
+    else:
+        form = forms.CreateEmployee()
+
+    emp_recs = []
+    for record in Employee.objects.all():
+        emp_recs.append({
+            'name': record.name,
+            'addr': record.addr
+        })
+    return render(request, 'v_modelforms/home.html', {'form': form, 'recs':emp_recs})
+
+
+```
+---
 
 ---
 **outer mysite/ root directory** : Just a container for project - can be renames
