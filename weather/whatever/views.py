@@ -6,7 +6,10 @@ import requests
 
 def home(request):
 
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=491a4880b06e5a06bbeeb9630d31513a'
+    url = (
+        'http://api.openweathermap.org/data/2.5/weather?q={}' +
+        '&units=metric&appid=491a4880b06e5a06bbeeb9630d31513a'
+    )
 
     if (request.method == 'POST'):
         form = CityForm(request.POST)
